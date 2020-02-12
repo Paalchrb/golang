@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main() {
+	getSum := getSumFunction()
+	fmt.Println(getSum(1, 2, 3, 4, 5, 6, 7, 8, 9))
+}
+
+func getSumFunction() func(...int) int {
+	return func(xi ...int) int {
+		total := 0
+		for _, v := range xi {
+			total += v
+		}
+		return total
+	}
+}
